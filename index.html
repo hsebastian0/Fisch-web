@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="f!sch: una camiseta enlatada, un pez que reacciona a tu cara y una experiencia de realidad aumentada.">
+  <meta name="theme-color" content="#0B4F6C">
+  <title>f!sch · Camiseta enlatada</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐟</text></svg>">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@500;600;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Principal">
+  <div class="wrap">
+    <a class="brand" href="#inicio">f<b>!</b>sch</a>
+    <ul class="links">
+      <li><a href="#producto">Producto</a></li>
+      <li><a href="#lata">Lata</a></li>
+      <li><a href="#packaging">Packaging</a></li>
+      <li><a href="#trackeo">Trackeo</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <div>
+      <h1>Una camiseta <em>enlatada.</em></h1>
+      <p class="lede">Un pez que reacciona a tu cara y una lata que guarda una camiseta y a su mascota.</p>
+      <div class="cta-row">
+        <a class="btn" href="#trackeo">Escanear la lata</a>
+        <a class="btn ghost" href="#lata">Ver la lata</a>
+      </div>
+      <div class="stats">
+        <div><strong>3</strong><span>piezas en una lata</span></div>
+        <div><strong>4</strong><span>reacciones del pez</span></div>
+        <div><strong>AR</strong><span>sin instalar nada</span></div>
+      </div>
+    </div>
+
+    <div class="fish-stage" aria-hidden="true">
+      <img class="mascot" src="assets/mascota.png" alt="" width="574" height="557">
+      <span class="bubble b1"></span>
+      <span class="bubble b2"></span>
+      <span class="bubble b3"></span>
+      <span class="bubble b4"></span>
+    </div>
+  </div>
+</header>
+
+<section id="producto">
+  <div class="wrap">
+    <p class="kicker">El producto</p>
+    <h2>Lo que hay dentro de la lata.</h2>
+    <div class="qa">
+      <div>
+        <h3>¿Qué es?</h3>
+        <p>Una camiseta enlatada. La lata es el empaque y también la llave de la experiencia.</p>
+      </div>
+      <div>
+        <h3>¿Cómo funciona?</h3>
+        <p>Apuntas la cámara a la lata y la experiencia se activa en tu teléfono, sin descargar nada.</p>
+      </div>
+      <div>
+        <h3>¿Para qué sirve?</h3>
+        <p>Para ver la camiseta antes de abrirla y conocer a la mascota de f!sch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lata" class="alt-bg">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Lo que escaneas</p>
+      <h2>Esta es la lata.</h2>
+      <p>Apunta la cámara a la etiqueta para activar el trackeo y ver la camiseta y la mascota.</p>
+      <div class="cta-row cta-spaced">
+        <a class="btn" href="#trackeo">Ir al trackeo</a>
+      </div>
+    </div>
+    <div class="can">
+      <img src="assets/lata.png" alt="Lata de f!sch con la mascota en la etiqueta" width="869" height="610">
+    </div>
+  </div>
+</section>
+
+<section id="packaging">
+  <div class="wrap">
+    <p class="kicker">Packaging</p>
+    <h2>Del empaque a la mascota.</h2>
+    <div class="chain">
+      <article>
+        <span class="step" aria-hidden="true">01</span>
+        <h3>La lata</h3>
+        <p>El empaque. Es lo primero que apuntas con la cámara.</p>
+      </article>
+      <article>
+        <span class="step" aria-hidden="true">02</span>
+        <h3>La camiseta</h3>
+        <p>Lo que guarda la lata, visible en realidad aumentada antes de abrirla.</p>
+      </article>
+      <article>
+        <span class="step" aria-hidden="true">03</span>
+        <h3>La mascota</h3>
+        <p>El personaje de f!sch, que completa la experiencia.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="trackeo" class="alt-bg">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Trackeo de imágenes</p>
+      <h2>Apunta a la lata.</h2>
+      <ol class="steps">
+        <li><span class="n">1</span><div><h3>Abre la experiencia</h3><p>Toca el botón o escanea el código de la lata.</p></div></li>
+        <li><span class="n">2</span><div><h3>Apunta la cámara</h3><p>Centra la lata en la pantalla y espera a que aparezca el contenido.</p></div></li>
+        <li><span class="n">3</span><div><h3>Explora</h3><p>Mira la mascota, la camiseta y la lata desde todos los ángulos.</p></div></li>
+      </ol>
+      <div class="cta-row cta-spaced">
+        <a class="btn" href="https://fisch-blue.vercel.app" target="_blank" rel="noopener">Abrir el trackeo</a>
+      </div>
+    </div>
+    <div>
+      <div class="frame">
+        <iframe src="https://fisch-blue.vercel.app" title="Trackeo de imágenes de f!sch" allow="camera; fullscreen; accelerometer; gyroscope" loading="lazy"></iframe>
+      </div>
+      <div class="frame-caption"><span>Vista previa del trackeo</span><a href="https://fisch-blue.vercel.app" target="_blank" rel="noopener">Pantalla completa</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="probar">
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Filtro facial</p>
+      <h2>Pruébalo con tu cara.</h2>
+      <p>El filtro sigue en pruebas. Aquí puedes verlo funcionando.</p>
+      <div class="cta-row"><a class="btn alt" href="https://filtro-pearl.vercel.app" target="_blank" rel="noopener">Abrir el filtro</a></div>
+    </div>
+    <div>
+      <div class="frame">
+        <iframe src="https://filtro-pearl.vercel.app" title="Filtro facial de f!sch" allow="camera; fullscreen" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="closing">
+  <div class="wrap">
+    <h2>Una lata, una camiseta, un pez.</h2>
+    <p>Todo lo que necesitas para conocer a f!sch.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://fisch-blue.vercel.app" target="_blank" rel="noopener">Escanear la lata</a>
+      <a class="btn ghost" href="https://filtro-pearl.vercel.app" target="_blank" rel="noopener">Probar el filtro</a>
+    </div>
+  </div>
+</div>
+
+<footer>f!sch · Camiseta enlatada</footer>
+
+</body>
+</html>
