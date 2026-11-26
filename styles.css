@@ -16,9 +16,9 @@
 
 /* ============ Base ============ */
 * { box-sizing: border-box; }
-
+ 
 html { scroll-padding-top: 4.5rem; }
-
+ 
 body {
   margin: 0;
   background: var(--foam);
@@ -27,29 +27,29 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
 }
-
+ 
 h1, h2, h3, .display {
   font-family: "DynaPuff", system-ui, sans-serif;
   line-height: 1.05;
   margin: 0;
 }
-
+ 
 p { margin: 0 0 1rem; max-width: 60ch; }
-
+ 
 a { color: inherit; }
-
+ 
 :focus-visible {
   outline: 3px solid var(--coral);
   outline-offset: 3px;
   border-radius: 6px;
 }
-
+ 
 .wrap {
   max-width: 1040px;
   margin: 0 auto;
   padding: 0 1.25rem;
 }
-
+ 
 /* ============ Nav ============ */
 .nav {
   position: sticky;
@@ -58,7 +58,7 @@ a { color: inherit; }
   background: var(--sea);
   color: var(--foam);
 }
-
+ 
 .nav .wrap {
   display: flex;
   align-items: center;
@@ -66,16 +66,16 @@ a { color: inherit; }
   gap: 1rem;
   min-height: 3.5rem;
 }
-
+ 
 .brand {
   font-family: "DynaPuff", sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   text-decoration: none;
 }
-
+ 
 .brand b { color: var(--sun); font-weight: 700; }
-
+ 
 .links {
   display: flex;
   gap: 1.1rem;
@@ -85,14 +85,21 @@ a { color: inherit; }
   font-weight: 700;
   font-size: 0.95rem;
 }
-
+ 
 .links a { text-decoration: none; opacity: 0.9; }
 .links a:hover { opacity: 1; color: var(--sun); }
-
+ 
 @media (max-width: 640px) {
-  .links li:not(:last-child) { display: none; }
+  .nav .wrap { min-height: 3.25rem; }
+  .links {
+    gap: 0.9rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+  .links::-webkit-scrollbar { display: none; }
 }
-
+ 
 /* ============ Hero ============ */
 .hero {
   background: var(--sea);
@@ -100,40 +107,40 @@ a { color: inherit; }
   padding: 4rem 0 5rem;
   overflow: hidden;
 }
-
+ 
 .hero .wrap {
   display: grid;
   gap: 2.5rem;
   align-items: center;
 }
-
+ 
 @media (min-width: 840px) {
   .hero .wrap { grid-template-columns: 1.1fr 0.9fr; }
 }
-
+ 
 .hero h1 {
-  font-size: clamp(3.2rem, 11vw, 6.5rem);
+  font-size: clamp(2.6rem, 11vw, 6.5rem);
   font-weight: 700;
   letter-spacing: -0.02em;
 }
-
+ 
 .hero h1 em { font-style: normal; color: var(--sun); }
-
+ 
 .hero .lede {
   font-size: clamp(1.1rem, 2.4vw, 1.3rem);
   margin-top: 1.25rem;
   max-width: 34ch;
 }
-
+ 
 .cta-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 2rem;
 }
-
+ 
 .cta-spaced { margin-top: 2rem; }
-
+ 
 .btn {
   display: inline-block;
   padding: 0.85rem 1.4rem;
@@ -144,7 +151,7 @@ a { color: inherit; }
   color: #fff;
   transition: transform 0.2s ease;
 }
-
+ 
 .btn:hover { transform: translateY(-2px); }
 .btn.alt { background: var(--sun); color: var(--ink); }
 .btn.ghost {
@@ -152,14 +159,14 @@ a { color: inherit; }
   color: var(--foam);
   box-shadow: inset 0 0 0 2px rgba(255, 247, 234, 0.5);
 }
-
+ 
 .stats {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   margin-top: 2.5rem;
 }
-
+ 
 .stats strong {
   display: block;
   font-family: "DynaPuff", sans-serif;
@@ -167,9 +174,9 @@ a { color: inherit; }
   color: var(--sun);
   line-height: 1;
 }
-
+ 
 .stats span { font-size: 0.95rem; opacity: 0.85; }
-
+ 
 /* ============ Pez animado ============ */
 .fish-stage {
   position: relative;
@@ -178,7 +185,7 @@ a { color: inherit; }
   width: 100%;
   justify-self: center;
 }
-
+ 
 .mascot {
   position: relative;
   z-index: 1;
@@ -187,7 +194,7 @@ a { color: inherit; }
   height: auto;
   animation: swim 4s ease-in-out infinite;
 }
-
+ 
 /* Burbujas que suben desde la mascota */
 .fish-stage .bubble {
   position: absolute;
@@ -200,68 +207,68 @@ a { color: inherit; }
   opacity: 0;
   animation: rise 3.5s linear infinite;
 }
-
+ 
 .fish-stage .b1 { left: 14%; width: 22px; height: 22px; animation-delay: 0s; }
 .fish-stage .b2 { left: 42%; width: 14px; height: 14px; animation-delay: -1.2s; }
 .fish-stage .b3 { left: 72%; width: 30px; height: 30px; animation-delay: -2.1s; }
 .fish-stage .b4 { left: 86%; width: 10px; height: 10px; animation-delay: -0.6s; }
-
+ 
 @keyframes swim {
   0%, 100% { transform: translateY(0) rotate(-2deg); }
   50% { transform: translateY(-14px) rotate(2deg); }
 }
-
+ 
 @keyframes rise {
   0% { transform: translateY(0) scale(0.8); opacity: 0; }
   20% { opacity: 0.8; }
   100% { transform: translateY(-260px) scale(1); opacity: 0; }
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
   .mascot, .fish-stage .bubble, .btn { animation: none; transition: none; }
 }
-
+ 
 /* ============ Secciones ============ */
 section { padding: 5rem 0; }
-
+ 
 .kicker {
   font-weight: 800;
   color: var(--coral);
   font-size: 0.95rem;
   margin-bottom: 0.5rem;
 }
-
+ 
 h2 {
   font-size: clamp(2.1rem, 5vw, 3.2rem);
   color: var(--sea);
   max-width: 18ch;
 }
-
+ 
 .split { display: grid; gap: 2rem; }
-
+ 
 @media (min-width: 840px) {
   .split { grid-template-columns: 1fr 1fr; gap: 3rem; }
 }
-
+ 
 .alt-bg { background: #FFEFD2; }
-
+ 
 /* Producto */
 .qa {
   display: grid;
   gap: 1.75rem;
   margin-top: 2.5rem;
 }
-
+ 
 @media (min-width: 840px) {
   .qa { grid-template-columns: repeat(3, 1fr); }
 }
-
+ 
 .qa h3 {
   font-size: 1.35rem;
   color: var(--sea);
   margin-bottom: 0.5rem;
 }
-
+ 
 /* Filtro */
 .expr {
   display: flex;
@@ -269,7 +276,7 @@ h2 {
   gap: 0.5rem;
   margin: 1.5rem 0;
 }
-
+ 
 .expr button {
   font: inherit;
   font-weight: 800;
@@ -280,17 +287,17 @@ h2 {
   color: var(--sea);
   cursor: pointer;
 }
-
+ 
 .expr button[aria-pressed="true"] {
   background: var(--sea);
   color: var(--foam);
 }
-
+ 
 .expr button:focus-visible {
   outline: 3px solid var(--coral);
   outline-offset: 2px;
 }
-
+ 
 .reaction-panel {
   background: var(--sea);
   color: var(--foam);
@@ -298,13 +305,13 @@ h2 {
   padding: 2rem;
   min-height: 220px;
 }
-
+ 
 .reaction-panel h3 {
   font-size: 1.8rem;
   color: var(--sun);
   margin-bottom: 0.5rem;
 }
-
+ 
 .reaction-panel .sound {
   display: inline-block;
   margin-top: 1rem;
@@ -314,29 +321,29 @@ h2 {
   padding: 0.3rem 0.8rem;
   border-radius: 999px;
 }
-
+ 
 /* Packaging */
 .chain {
   display: grid;
   gap: 1rem;
   margin-top: 2.5rem;
 }
-
+ 
 @media (min-width: 840px) {
   .chain { grid-template-columns: repeat(3, 1fr); }
 }
-
+ 
 .chain article {
   border-radius: var(--radius);
   padding: 2rem 1.75rem;
   background: #fff;
   box-shadow: 0 1px 0 var(--soft);
 }
-
+ 
 .chain article:nth-child(1) { background: var(--mint); }
 .chain article:nth-child(2) { background: var(--sun); }
 .chain article:nth-child(3) { background: var(--coral); color: #fff; }
-
+ 
 .chain .step {
   font-family: "DynaPuff", sans-serif;
   font-size: 3rem;
@@ -344,10 +351,10 @@ h2 {
   opacity: 0.35;
   font-weight: 700;
 }
-
+ 
 .chain h3 { font-size: 1.6rem; margin: 0.5rem 0; }
 .chain p { margin: 0; }
-
+ 
 /* Pasos del trackeo */
 .steps {
   display: grid;
@@ -356,19 +363,19 @@ h2 {
   padding: 0;
   list-style: none;
 }
-
+ 
 .steps li {
   display: grid;
   grid-template-columns: 3.5rem 1fr;
   gap: 1rem;
 }
-
+ 
 .steps h3 {
   font-size: 1.35rem;
   color: var(--sea);
   margin-bottom: 0.25rem;
 }
-
+ 
 .steps .n {
   width: 3.5rem;
   height: 3.5rem;
@@ -381,13 +388,13 @@ h2 {
   display: grid;
   place-items: center;
 }
-
+ 
 /* Lata física */
 .can {
   display: grid;
   place-items: center;
 }
-
+ 
 .can img {
   width: 100%;
   max-width: 520px;
@@ -395,7 +402,7 @@ h2 {
   filter: drop-shadow(0 24px 30px rgba(7, 47, 66, 0.35));
   transform: rotate(-3deg);
 }
-
+ 
 /* Visores embebidos */
 .frame {
   border-radius: var(--radius);
@@ -403,7 +410,7 @@ h2 {
   background: var(--abyss);
   box-shadow: 0 20px 50px -20px rgba(7, 47, 66, 0.45);
 }
-
+ 
 .frame iframe {
   display: block;
   width: 100%;
@@ -411,20 +418,20 @@ h2 {
   min-height: 420px;
   border: 0;
 }
-
+ 
 .frame.frame-img {
   max-width: 320px;
   margin: 0 auto;
   background: transparent;
   box-shadow: 0 20px 50px -20px rgba(7, 47, 66, 0.45);
 }
-
+ 
 .frame-img img {
   display: block;
   width: 100%;
   height: auto;
 }
-
+ 
 .frame-caption {
   display: flex;
   justify-content: space-between;
@@ -434,7 +441,7 @@ h2 {
   margin-top: 1rem;
   font-weight: 700;
 }
-
+ 
 /* Cierre */
 .closing {
   background: var(--sea);
@@ -442,19 +449,91 @@ h2 {
   text-align: center;
   padding: 5rem 0;
 }
-
+ 
 .closing h2 {
   color: var(--sun);
   margin: 0 auto 1rem;
   max-width: 20ch;
 }
-
+ 
 .closing p { margin: 0 auto 2rem; }
 .closing .cta-row { justify-content: center; }
-
+ 
 footer {
   padding: 2rem 0;
   font-size: 0.9rem;
   opacity: 0.7;
   text-align: center;
 }
+ 
+/* ============ Adaptación a pantallas pequeñas ============ */
+@media (max-width: 839px) {
+  .hero { padding: 3rem 0 3.5rem; }
+  .hero .wrap { gap: 2rem; }
+  .stats { gap: 1.25rem 1.75rem; margin-top: 2rem; }
+  .stats strong { font-size: 1.9rem; }
+ 
+  section { padding: 3.5rem 0; }
+  h2 { max-width: none; font-size: clamp(1.9rem, 7vw, 2.6rem); }
+ 
+  .qa { margin-top: 1.75rem; gap: 1.5rem; }
+  .chain { margin-top: 1.75rem; }
+  .chain article { padding: 1.5rem 1.35rem; }
+  .steps { margin-top: 1.75rem; gap: 1.25rem; }
+ 
+  .fish-stage { max-width: 300px; margin: 0 auto; }
+  .can img { max-width: 360px; }
+  .frame.frame-img { max-width: 260px; }
+ 
+  .closing { padding: 3.5rem 0; }
+  .cta-row { margin-top: 1.5rem; }
+  .btn { padding: 0.8rem 1.25rem; }
+}
+ 
+@media (max-width: 420px) {
+  body { font-size: 1rem; }
+  .wrap { padding: 0 1rem; }
+  .hero h1 { font-size: clamp(2.3rem, 12vw, 3rem); }
+  .hero .lede { font-size: 1.05rem; }
+  .cta-row .btn { flex: 1 1 100%; text-align: center; }
+  .stats { gap: 1rem 1.25rem; }
+  .stats strong { font-size: 1.6rem; }
+  .reaction-panel { padding: 1.5rem; }
+}
+ 
+/* ============ Corrección de desbordamiento horizontal ============ */
+html, body { overflow-x: clip; max-width: 100%; }
+ 
+.wrap,
+.hero .wrap,
+.split,
+.chain,
+.qa {
+  min-width: 0;
+}
+ 
+.hero .wrap > * { min-width: 0; }
+.chain article { min-width: 0; overflow-wrap: anywhere; }
+ 
+.hero .fish-stage,
+.fish-stage {
+  width: 100%;
+  max-width: min(420px, 100%);
+}
+ 
+.mascot { max-width: 100%; }
+ 
+@media (min-width: 840px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); }
+  .split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .chain { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .qa { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+ 
+@media (max-width: 839px) {
+  .hero .wrap,
+  .split,
+  .chain,
+  .qa { grid-template-columns: minmax(0, 1fr); }
+}
+ 
