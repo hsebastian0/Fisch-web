@@ -14,7 +14,6 @@
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-
 /* ============ Base ============ */
 * { box-sizing: border-box; }
 
@@ -411,6 +410,19 @@ h2 {
   height: min(70vh, 600px);
   min-height: 420px;
   border: 0;
+}
+
+.frame.frame-img {
+  max-width: 320px;
+  margin: 0 auto;
+  background: transparent;
+  box-shadow: 0 20px 50px -20px rgba(7, 47, 66, 0.45);
+}
+
+.frame-img img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .frame-caption {
